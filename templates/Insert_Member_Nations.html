@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>United Nations</title>
+    <link rel="stylesheet" type="text/css" href="static/style2.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="org">
+        <div style="font-size: 40px;"><b>United Nations</b></div>
+        <div>
+            <img src="{{url_for('static',filename='logo.jpg')}}" class="img_un">
+        </div>
+        <div text-align="center" class="navbar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li class="active"><a href="/mn">Member Nations</a></li>
+            <li><a href="/fb">Functional Bodies</a></li>
+            <li><a href="/le">Leaders</a></li>
+            <li><a href="/re">Representatives</a></li>
+            <li><a href="/aw">Awards</a></li>
+        </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="title">Enter the Details of the New Member Nation</div>
+        <div class="content">
+          <form action="/in_mn" method = "POST">
+            <div class="user-details">
+              <div class="input-box">
+                <span class="details" >Country Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <input type="text" placeholder="Enter Country name" name="country_name" required>
+              </div>
+              <div class="input-box">
+                <span class="details" >Country Leader&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <input type="text" placeholder="Enter Country's Leader Name" name="country_leader" required>
+              </div>
+              <div class="input-box">
+                <span class="details" >Year of Joining&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <input type="number" placeholder="Enter the Year of Joining" name="year_of_joining" min="1940" max="2022" required>
+              </div>
+              <div class="input-box">
+                <span class="details" >Funding&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <input type="number" placeholder="Enter the Funding(in dollars)" name="funding" required>
+              </div>
+            </div>
+            <div class="gender-details" >
+                <span class="gender-title" >Veto Power&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <input type="radio" name="veto" id="dot-1" value="Yes">
+                <input type="radio" name="veto" id="dot-2" value="No">
+              
+              <div class="category" >
+                <label for="dot-1">
+                <span class="dot one"></span>
+                <span class="gender">Yes</span>
+              </label>
+              <label for="dot-2">
+                <span class="dot two"></span>
+                <span class="gender" >No</span>
+              </label>
+              </div>
+            </div>
+            <div class="button">
+              <input type="submit" value="Register">
+            </div>
+          </form>
+        </div>
+      </div>
+</body>
+</html>

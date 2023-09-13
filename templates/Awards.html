@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>United Nations</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="org">
+        <div style="font-size: 40px;"><b>United Nations</b></div>
+        <div>
+            <img src="{{url_for('static',filename='logo.jpg')}}" class="img_un">
+        </div>
+        <div text-align="center" class="navbar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/mn">Member Nations</a></li>
+            <li><a href="/fb">Functional Bodies</a></li>
+            <li><a href="/le">Leaders</a></li>
+            <li><a href="/re">Representatives</a></li>
+            <li class="active"><a href="/aw">Awards</a></li>
+        </ul>
+        </div>
+    </div>
+    <div class="table_t"><b>Awards</b></div>
+    <div class="my-51" >
+        <table id="customers" class="table table-bordered">
+            <tr>
+                <th>Award</th>
+                <th>Given For</th>
+            </tr>
+            {% for row in data %}
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div class="my-5" >
+        <div class="form-style-5" style="right: 1%;">
+            <form action="/de_aw" method="POST">
+            <fieldset>
+            <legend>Enter Award to be Deleted</legend>
+            <input type="text" name="awa" placeholder="Enter the Award Name">
+            </fieldset>
+            <button type="submit" class="in_bt btn btn-primary btn-sm">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
